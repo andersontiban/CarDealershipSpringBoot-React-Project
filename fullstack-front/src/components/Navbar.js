@@ -7,14 +7,14 @@ export default function Navbar() {
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
           <Link class="btn btn-outline-success" to="add">
-            Add Car
+            Add Vehicle
           </Link>
 
           <form class="d-flex" role="search">
             <input
               class="form-control me-2"
               type="search"
-              placeholder="Search"
+              placeholder="Category"
               aria-label="Search"
             ></input>
             <button class="btn btn-outline-success" type="submit">

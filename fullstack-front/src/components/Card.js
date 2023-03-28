@@ -1,14 +1,17 @@
 import React from "react";
 
-export default function Card({ carName, carPrice, carType, imageUrl }) {
+export default function Card({ carName, carPrice, carType, imageUrl, ident }) {
   return (
-    <div>
-      <p>{carName}</p>
-      <p>{carType}</p>
+    <div class="car-card">
+      <p>
+        {carName}
+        id:{ident}
+      </p>
+      <p>Category:{carType}</p>
       <img src={imageUrl} alt={carName} />
-      <p>{carPrice}</p>
+      <p>${carPrice}</p>
       <button className="btn btn-outline-primary mx-2">Edit</button>
-      <button className="btn btn-danger mx-2">Delete</button>
+      <button className="btn btn-danger mx-2">Sold</button>
     </div>
   );
 }

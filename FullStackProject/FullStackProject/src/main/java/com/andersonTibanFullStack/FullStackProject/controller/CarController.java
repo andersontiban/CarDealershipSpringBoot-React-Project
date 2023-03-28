@@ -1,5 +1,6 @@
 package com.andersonTibanFullStack.FullStackProject.controller;
 
+import com.andersonTibanFullStack.FullStackProject.exception.CarNotFoundException;
 import com.andersonTibanFullStack.FullStackProject.model.Car;
 import com.andersonTibanFullStack.FullStackProject.repository.CarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,12 @@ public class CarController {
     @GetMapping("/inventory")//get all cars
     public List<Car> getAllCars(){
         return carRepository.findAll();
+    }
+
+    @GetMapping("/inventory/car/{id}")//get car based on id
+    Car getCarById(@PathVariable Long id){
+        return carRepository.findById(id)
+                .orElseThrow(()-> new CarNotFoundException(id));
     }
 
     @GetMapping("/inventory/{carType}")//get cars based on type

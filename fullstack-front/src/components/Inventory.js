@@ -14,7 +14,7 @@ export default function Inventory() {
     const result = await axios.get(`${apiUrl}/inventory`);
     setCars(result.data);
   };
-  console.log(cars);
+
   return (
     <div>
       {cars.map((car) => (
@@ -23,7 +23,7 @@ export default function Inventory() {
           carPrice={car.carPrice}
           carType={car.carType}
           imageUrl={car.imageUrl}
-          key={car.id}
+          ident={car.id}
         />
       ))}
     </div>
