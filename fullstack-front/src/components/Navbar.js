@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { Button } from "bootstrap";
 
 export default function Navbar() {
   //Formik Logics
@@ -17,9 +18,12 @@ export default function Navbar() {
 
   return (
     <div>
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <nav class="navbar bg-dark" data-bs-theme="dark">
         <div class="container-fluid">
-          <Link class="btn btn-outline-success" to="add">
+          <Link className="homeButton" class="btn btn-primary" to="/">
+            home
+          </Link>
+          <Link class="btn btn-success" to="add">
             Add Vehicle
           </Link>
 
@@ -35,7 +39,7 @@ export default function Navbar() {
             ></input>
             <Link
               to={`/inventory/${formik.values.carCategory}`}
-              class="btn btn-outline-success"
+              class="btn btn-success"
               type="submit"
             >
               Search

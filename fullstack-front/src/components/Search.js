@@ -12,7 +12,7 @@ export default function Search() {
 
   useEffect(() => {
     loadCategory();
-  }, [cars]);
+  }, []);
 
   const loadCategory = async () => {
     const result = await axios.get(`${apiUrl}/inventory/${carType}`);
@@ -22,6 +22,7 @@ export default function Search() {
 
   return (
     <div>
+      <h1>{carType} Inventory</h1>
       {cars.map((car) => (
         <Card
           carName={car.carName}

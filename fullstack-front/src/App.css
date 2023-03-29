@@ -41,4 +41,20 @@
   color: red;
 }
 .car-card {
+  display: inline-block;
+  margin: 15px;
+
+  border-radius: 15px;
+}
+.car-image {
+  height: 200px;
+}
+.container {
+  justify-content: flex-start;
+}
+.carouselExample {
+  height: 30%;
+}
+.imgs {
+  height: 30%;
 }

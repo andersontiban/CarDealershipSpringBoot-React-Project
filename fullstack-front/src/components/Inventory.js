@@ -5,6 +5,13 @@ import Card from "./Card";
 export default function Inventory() {
   const apiUrl = "http://localhost:8080/dealership";
   const [cars, setCars] = useState([]);
+  const [counter, setCounter] = useState(0); //added
+  function handleClick() {
+    //passed to child component
+    //added
+    setCounter(counter + 1);
+    loadCars();
+  }
 
   useEffect(() => {
     loadCars();
@@ -12,11 +19,13 @@ export default function Inventory() {
 
   const loadCars = async () => {
     const result = await axios.get(`${apiUrl}/inventory`);
+    console.log(result.data);
     setCars(result.data);
   };
 
   return (
     <div>
+      <h1>Inventory</h1>
       {cars.map((car) => (
         <Card
           carName={car.carName}
@@ -24,6 +33,7 @@ export default function Inventory() {
           carType={car.carType}
           imageUrl={car.imageUrl}
           ident={car.id}
+          onClick={handleClick} //added
         />
       ))}
     </div>

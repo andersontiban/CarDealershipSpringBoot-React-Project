@@ -25,7 +25,7 @@ export default function AddCar() {
         .max(20, "Must be 20 characters or less")
         .required("Input required"),
       imageUrl: Yup.string()
-        .max(100, "Must be 20 characters or less")
+        .max(10000, "Must be 10000 characters or less")
         .required("Input required"),
     }),
 
