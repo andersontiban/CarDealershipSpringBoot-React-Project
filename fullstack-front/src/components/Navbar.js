@@ -1,7 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 
 export default function Navbar() {
+  //Formik Logics
+  const formik = useFormik({
+    initialValues: {
+      carCategory: "",
+    },
+    //submit form
+    onSubmit: (values) => {
+      console.log(values.carCategory);
+    },
+  });
+
   return (
     <div>
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -10,16 +23,23 @@ export default function Navbar() {
             Add Vehicle
           </Link>
 
-          <form class="d-flex" role="search">
+          <form onSubmit={formik.handleSubmit} class="d-flex" role="search">
             <input
               class="form-control me-2"
-              type="search"
+              type="text"
               placeholder="Category"
+              name="carCategory"
+              value={formik.values.carCategory}
+              onChange={formik.handleChange}
               aria-label="Search"
             ></input>
-            <button class="btn btn-outline-success" type="submit">
+            <Link
+              to={`/inventory/${formik.values.carCategory}`}
+              class="btn btn-outline-success"
+              type="submit"
+            >
               Search
-            </button>
+            </Link>
           </form>
         </div>
       </nav>
