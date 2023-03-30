@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: #faf9f8;
 }
 
 .App-logo {
@@ -43,11 +44,12 @@
 .car-card {
   display: inline-block;
   margin: 15px;
-
+  background-color: white;
   border-radius: 15px;
 }
 .car-image {
   height: 200px;
+  border-radius: 15px;
 }
 .container {
   justify-content: flex-start;
