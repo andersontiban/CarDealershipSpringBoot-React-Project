@@ -43,13 +43,15 @@
 }
 .car-card {
   display: inline-block;
-  margin: 15px;
+  margin: 20px;
   background-color: white;
   border-radius: 15px;
+  width: 25%;
 }
 .car-image {
   height: 200px;
   border-radius: 15px;
+  width: 100%;
 }
 .container {
   justify-content: flex-start;
@@ -59,4 +61,8 @@
 }
 .imgs {
   height: 30%;
+}
+#card-container {
+  width: 90%;
+  margin: auto;
 }

@@ -25,16 +25,10 @@ export default function Card({
       <img className="car-image" src={imageUrl} alt={carName} />
       <h4>{carName}</h4>
 
-      <p>${carPrice}</p>
-      <Link to={`/more/${ident}`} className="btn btn-primary mx-2">
+      <p>{carType}</p>
+      <Link to={`/more/${ident}`} className="btn btn-dark mx-2">
         More
       </Link>
-      <Link to={`/editCar/${ident}`} className="btn btn-outline-primary mx-2">
-        Edit
-      </Link>
-      <button onClick={deleteCar} className="btn btn-danger mx-2">
-        Sold
-      </button>
     </div>
   );
 }

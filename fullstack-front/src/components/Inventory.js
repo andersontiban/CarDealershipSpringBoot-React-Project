@@ -24,7 +24,7 @@ export default function Inventory() {
   };
 
   return (
-    <div>
+    <div id="card-container">
       <h1>Inventory</h1>
       {cars.map((car) => (
         <Card

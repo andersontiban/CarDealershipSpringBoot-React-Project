@@ -19,7 +19,7 @@ export default function EditCar() {
     },
     validationSchema: Yup.object({
       carName: Yup.string()
-        .max(20, "Must be 20 characters or less")
+        .max(30, "Must be 30 characters or less")
         .required("Input required"),
       carPrice: Yup.number()
         .max(1000000, "Must be 7 digits or less")
@@ -131,7 +131,7 @@ export default function EditCar() {
               <button type="submit" className="btn btn-outline-primary">
                 Submit
               </button>
-              <Link className="btn btn-outline-danger mx-2" to="/">
+              <Link className="btn btn-outline-danger mx-2" to={`/more/${id}`}>
                 Cancel
               </Link>
             </form>
