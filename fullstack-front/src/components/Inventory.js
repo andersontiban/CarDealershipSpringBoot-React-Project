@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Card from "./Card";
+import Carousel from "./Carousel";
 
 export default function Inventory() {
   const apiUrl = "http://localhost:8080/dealership";

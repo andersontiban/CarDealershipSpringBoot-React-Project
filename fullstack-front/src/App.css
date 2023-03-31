@@ -55,14 +55,40 @@
 }
 .container {
   justify-content: flex-start;
+  padding-top: 5%;
+  padding-bottom: 8%;
+  background-color: #faf9f8;
 }
 .carouselExample {
   height: 30%;
 }
 .imgs {
-  height: 30%;
+  opacity: 0.5;
 }
 #card-container {
   width: 90%;
   margin: auto;
+}
+.more-car-image {
+  width: 50%;
+  border-radius: 20px;
+}
+#more-card-container {
+  padding-top: 8%;
+  padding-bottom: 5%;
+}
+.small-nav {
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+}
+.button {
+  text-decoration: none;
+  color: white;
+}
+.addbutton {
+  padding-left: 10px;
+  padding-right: 40%;
+  text-decoration: none;
+  color: white;
 }

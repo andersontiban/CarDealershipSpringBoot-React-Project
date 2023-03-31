@@ -7,7 +7,15 @@ export default function Carousel() {
         <div class="carousel-item active">
           <img
             className="imgs"
-            src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
+            src="https://cardealer.potenzaglobalsolutions.com/wp-content/uploads/2017/01/07-3.jpg"
+            class="d-block w-100"
+            alt="..."
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            className="imgs"
+            src="https://www.usedcarstoafrica.com/wp-content/uploads/2021/04/03-5.jpg"
             class="d-block w-100"
             alt="..."
           />
@@ -16,14 +24,6 @@ export default function Carousel() {
           <img
             className="imgs"
             src="https://wallpaperaccess.com/full/3723585.jpg"
-            class="d-block w-100"
-            alt="..."
-          />
-        </div>
-        <div class="carousel-item">
-          <img
-            className="imgs"
-            src="https://wallpaperbat.com/img/567969-car-wallpaper-top-free-2560x1440-car-background.jpg"
             class="d-block w-100"
             alt="..."
           />

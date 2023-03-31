@@ -19,13 +19,15 @@ export default function Navbar() {
   return (
     <div>
       <nav class="navbar bg-dark" data-bs-theme="dark">
-        <div class="container-fluid">
-          <Link className="homeButton" class="btn btn-primary" to="/">
-            home
-          </Link>
-          <Link class="btn btn-success" to="add">
-            Add Vehicle
-          </Link>
+        <div class="container-lg">
+          <div class="small-nav">
+            <Link className="button" to="/">
+              Home
+            </Link>
+            <Link className="addbutton" to="add">
+              Add Vehicle
+            </Link>
+          </div>
 
           <form onSubmit={formik.handleSubmit} class="d-flex" role="search">
             <input

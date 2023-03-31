@@ -25,13 +25,12 @@ export default function MoreCard() {
   }, []);
 
   return (
-    <div>
-      <h3>MoreCard {id}</h3>
-      <img className="car-image" src={car.imageUrl} alt={car.carName} />
-      <h4>{car.carName}</h4>
-      <p>Category:{car.carType}</p>
+    <div id="more-card-container">
+      <h3>{car.carName}</h3>
+      <img className="more-car-image" src={car.imageUrl} alt={car.carName} />
+      <h4>Category:{car.carType}</h4>
 
-      <p>${car.carPrice}</p>
+      <h4>Price: ${car.carPrice}</h4>
       <Link to={`/editCar/${id}`} className="btn btn-outline-primary mx-2">
         Edit
       </Link>

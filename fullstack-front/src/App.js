@@ -7,6 +7,7 @@ import AddCar from "./components/AddCar";
 import EditCar from "./components/EditCar";
 import Search from "./components/Search";
 import Carousel from "./components/Carousel";
+
 import MoreCard from "./components/MoreCard";
 
 function App() {
