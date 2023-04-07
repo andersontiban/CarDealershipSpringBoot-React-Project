@@ -7,6 +7,8 @@ import AddCar from "./components/AddCar";
 import EditCar from "./components/EditCar";
 import Search from "./components/Search";
 import Carousel from "./components/Carousel";
+import Login from "./components/Login";
+import { AuthProvider } from "./components/AuthContext";
 
 import MoreCard from "./components/MoreCard";
 
@@ -14,17 +16,24 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Navbar />
+        <AuthProvider>
+          <Navbar />
 
-        <div className="container">
-          <Routes>
-            <Route exact path="/" element={<Inventory />} />
-            <Route exact path="/add" element={<AddCar />} />
-            <Route exact path="/editCar/:id" element={<EditCar />} />
-            <Route exact path="/more/:id" element={<MoreCard />} />
-            <Route exact path="/inventory/:carType" element={<Search />} />
-          </Routes>
-        </div>
+          <div className="container">
+            <Routes>
+              <Route exact path="/login" element={<Login />}></Route>
+              <Route exact path="/" element={<Inventory />} />
+              <Route exact path="/add" element={<AddCar />} />
+              <Route exact path="/editCar/:id" element={<EditCar />} />
+              <Route exact path="/more/:id" element={<MoreCard />} />
+              <Route
+                exact
+                path="/inventory/:carType/:price"
+                element={<Search />}
+              />
+            </Routes>
+          </div>
+        </AuthProvider>
       </Router>
     </div>
   );

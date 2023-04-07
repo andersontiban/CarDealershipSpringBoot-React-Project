@@ -6,6 +6,7 @@ import Card from "./Card";
 export default function Search() {
   //get param
   const { carType } = useParams();
+  const { price } = useParams();
 
   const apiUrl = "http://localhost:8080/dealership";
   const [cars, setCars] = useState([]);
@@ -15,8 +16,9 @@ export default function Search() {
   }, []);
 
   const loadCategory = async () => {
-    const result = await axios.get(`${apiUrl}/inventory/${carType}`);
+    const result = await axios.get(`${apiUrl}/inventory/${carType}/${price}`);
     console.log(result.data);
+    console.log(price);
     setCars(result.data);
   };
 

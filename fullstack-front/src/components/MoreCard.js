@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { useContext } from "react";
+import { AuthContext } from "./AuthContext";
 
 export default function MoreCard() {
+  const { isLoggedIn } = useContext(AuthContext);
+
   let navigate = useNavigate();
   let [car, setCar] = useState([]);
   const apiUrl = "http://localhost:8080/dealership";
@@ -31,12 +35,16 @@ export default function MoreCard() {
       <h4>Category:{car.carType}</h4>
 
       <h4>Price: ${car.carPrice}</h4>
-      <Link to={`/editCar/${id}`} className="btn btn-outline-primary mx-2">
-        Edit
-      </Link>
-      <button onClick={deleteCar} className="btn btn-danger mx-2">
-        Sold
-      </button>
+      {isLoggedIn && (
+        <Link to={`/editCar/${id}`} className="btn btn-outline-primary mx-2">
+          Edit
+        </Link>
+      )}
+      {isLoggedIn && (
+        <button onClick={deleteCar} className="btn btn-danger mx-2">
+          Sold
+        </button>
+      )}
     </div>
   );
 }

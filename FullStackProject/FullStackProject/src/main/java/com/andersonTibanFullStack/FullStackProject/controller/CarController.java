@@ -29,9 +29,10 @@ public class CarController {
                 .orElseThrow(()-> new CarNotFoundException(id));
     }
 
-    @GetMapping("/inventory/{carType}")//get cars based on type
-    public ResponseEntity<List<Car>> getCarByType(@PathVariable String carType){
-        return new ResponseEntity<List<Car>>(carRepository.findByCarType(carType), HttpStatus.OK);
+    @GetMapping("/inventory/{carType}/{price}")//get cars based on type
+    public ResponseEntity<List<Car>> getCarByType(@PathVariable String carType, @PathVariable int price){
+        System.out.println(price);
+        return new ResponseEntity<List<Car>>(carRepository.findByCarTypeLikeAndCarPriceLessThanEqual(carType, price), HttpStatus.OK);
     }
 
     @GetMapping("inventory/price/{carPrice}")//get cars based on price
