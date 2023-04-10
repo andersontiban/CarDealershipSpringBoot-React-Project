@@ -26,7 +26,7 @@ export default function Inventory() {
 
   return (
     <div id="card-container">
-      <h1>Inventory</h1>
+      <h1 id="header">Inventory</h1>
       {cars.map((car) => (
         <Card
           carName={car.carName}

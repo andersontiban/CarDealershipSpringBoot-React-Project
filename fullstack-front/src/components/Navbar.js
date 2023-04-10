@@ -39,8 +39,8 @@ export default function Navbar() {
           </div>
 
           <form onSubmit={formik.handleSubmit} class="d-flex" role="search">
-            <label for="filter" className="button">
-              Price:
+            <label id="price-label" for="filter" className="button">
+              Price
             </label>
             <select
               name="filter"
@@ -48,7 +48,7 @@ export default function Navbar() {
               value={formik.values.filter}
               onChange={formik.handleChange}
             >
-              <option value="1000000">select</option>
+              <option value="10000000">select</option>
               <option value="10000">10,000</option>
               <option value="20000">20,000</option>
               <option value="30000">30,000</option>

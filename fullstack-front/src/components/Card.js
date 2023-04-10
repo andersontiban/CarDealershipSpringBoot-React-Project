@@ -23,7 +23,7 @@ export default function Card({
   return (
     <div class="car-card">
       <img className="car-image" src={imageUrl} alt={carName} />
-      <h4>{carName}</h4>
+      <h4 id="card-name">{carName}</h4>
 
       <p>${carPrice}</p>
       <Link to={`/more/${ident}`} className="btn btn-dark mx-2">

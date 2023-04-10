@@ -24,7 +24,7 @@ export default function Search() {
 
   return (
     <div>
-      <h1>{carType} Inventory</h1>
+      <h1 id="header">{carType} Inventory</h1>
       {cars.map((car) => (
         <Card
           carName={car.carName}

@@ -30,21 +30,25 @@ export default function MoreCard() {
 
   return (
     <div id="more-card-container">
-      <h3>{car.carName}</h3>
-      <img className="more-car-image" src={car.imageUrl} alt={car.carName} />
-      <h4>Category:{car.carType}</h4>
+      <div id="image-container">
+        <img className="more-car-image" src={car.imageUrl} alt={car.carName} />
+      </div>
+      <div id="car-info">
+        <h3>{car.carName}</h3>
+        <h4>Category:{car.carType}</h4>
 
-      <h4>Price: ${car.carPrice}</h4>
-      {isLoggedIn && (
-        <Link to={`/editCar/${id}`} className="btn btn-outline-primary mx-2">
-          Edit
-        </Link>
-      )}
-      {isLoggedIn && (
-        <button onClick={deleteCar} className="btn btn-danger mx-2">
-          Sold
-        </button>
-      )}
+        <h4 id="price">Price: ${car.carPrice}</h4>
+        {isLoggedIn && (
+          <Link to={`/editCar/${id}`} className="btn btn-outline-primary mx-2">
+            Edit
+          </Link>
+        )}
+        {isLoggedIn && (
+          <button onClick={deleteCar} className="btn btn-danger mx-2">
+            Sold
+          </button>
+        )}
+      </div>
     </div>
   );
 }

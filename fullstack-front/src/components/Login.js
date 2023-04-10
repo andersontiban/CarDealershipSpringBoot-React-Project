@@ -35,7 +35,9 @@ export default function Login() {
     <div className="container">
       <div className="row">
         <div className="col-md-6 offset-md-3 border rounded p-4 mt-2 shadow">
-          <h2 className="text-center m-4">Login</h2>
+          <h2 id="header" className="text-center m-4">
+            Login
+          </h2>
           <div className="mb-3">
             <form onSubmit={formik.handleSubmit}>
               <label htmlFor="username" className="form-label">

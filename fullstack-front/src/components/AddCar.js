@@ -46,7 +46,9 @@ export default function AddCar() {
     <div className="container">
       <div className="row">
         <div className="col-md-6 offset-md-3 border rounded p-4 mt-2 shadow">
-          <h2 className="text-center m-4">Register Car</h2>
+          <h2 id="header" className="text-center m-4">
+            Register Car
+          </h2>
           <div className="mb-3">
             <form onSubmit={formik.handleSubmit}>
               <label htmlFor="carName" className="form-label">
