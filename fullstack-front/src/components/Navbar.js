@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { useFormik } from "formik";
-import * as Yup from "yup";
-import { Button } from "bootstrap";
 import { useContext } from "react";
 import { AuthContext } from "./AuthContext";
 
@@ -15,16 +13,14 @@ export default function Navbar() {
       filter: "",
     },
     //submit form
-    onSubmit: (values) => {
-      console.log("hey");
-    },
+    onSubmit: (values) => {},
   });
 
   return (
     <div>
-      <nav class="navbar bg-dark" data-bs-theme="dark">
-        <div class="container-lg">
-          <div class="small-nav">
+      <nav className="navbar bg-dark" data-bs-theme="dark">
+        <div className="container-lg">
+          <div className="small-nav">
             <Link className="button" to="login">
               Login
             </Link>
@@ -38,8 +34,8 @@ export default function Navbar() {
             )}
           </div>
 
-          <form onSubmit={formik.handleSubmit} class="d-flex" role="search">
-            <label id="price-label" for="filter" className="button">
+          <form onSubmit={formik.handleSubmit} className="d-flex" role="search">
+            <label id="price-label" htmlFor="filter" className="button">
               Price
             </label>
             <select
@@ -59,7 +55,7 @@ export default function Navbar() {
               <option value="80000">80,000</option>
             </select>
             <input
-              class="form-control me-2"
+              className="form-control me-2"
               type="text"
               placeholder="Category"
               name="carCategory"
@@ -69,7 +65,7 @@ export default function Navbar() {
             ></input>
             <Link
               to={`/inventory/${formik.values.carCategory}/${formik.values.filter}`}
-              class="btn btn-success"
+              className="btn btn-success"
               type="submit"
             >
               Search

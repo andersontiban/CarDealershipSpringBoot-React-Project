@@ -96,11 +96,17 @@ html {
   color: white;
   padding-left: 10px;
 }
+.button:hover {
+  color: rgb(98, 98, 98);
+}
 .addbutton {
   padding-left: 10px;
   padding-right: 40%;
   text-decoration: none;
   color: white;
+}
+.addbutton:hover {
+  color: rgb(98, 98, 98);
 }
 
 #image-container {
@@ -134,4 +140,6 @@ select {
 }
 
 #price-label {
+  padding-top: 6px;
+  padding-right: 6px;
 }

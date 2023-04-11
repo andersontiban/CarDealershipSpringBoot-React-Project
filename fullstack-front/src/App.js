@@ -6,7 +6,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AddCar from "./components/AddCar";
 import EditCar from "./components/EditCar";
 import Search from "./components/Search";
-import Carousel from "./components/Carousel";
 import Login from "./components/Login";
 import { AuthProvider } from "./components/AuthContext";
 

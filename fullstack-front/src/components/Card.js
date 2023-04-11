@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import axios from "axios";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Card({
   carName,
@@ -21,7 +21,7 @@ export default function Card({
   };
 
   return (
-    <div class="car-card">
+    <div className="car-card">
       <img className="car-image" src={imageUrl} alt={carName} />
       <h4 id="card-name">{carName}</h4>
 

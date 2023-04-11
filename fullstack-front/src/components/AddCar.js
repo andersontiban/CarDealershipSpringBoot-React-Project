@@ -69,7 +69,7 @@ export default function AddCar() {
               ></input>
               <label htmlFor="carPrice" className="form-label">
                 {formik.touched.carPrice && formik.errors.carPrice ? (
-                  <div class="formik-errors">Must enter numbers</div>
+                  <div className="formik-errors">Must enter numbers</div>
                 ) : (
                   "Car Price"
                 )}
@@ -85,7 +85,7 @@ export default function AddCar() {
               ></input>
               <label htmlFor="carType" className="form-label">
                 {formik.touched.carType && formik.errors.carType ? (
-                  <div class="formik-errors">{formik.errors.carType}</div>
+                  <div className="formik-errors">{formik.errors.carType}</div>
                 ) : (
                   "Car Type"
                 )}
@@ -101,7 +101,7 @@ export default function AddCar() {
               ></input>
               <label htmlFor="imageUrl" className="form-label">
                 {formik.touched.imageUrl && formik.errors.imageUrl ? (
-                  <div class="formik-errors">{formik.errors.imageUrl}</div>
+                  <div className="formik-errors">{formik.errors.imageUrl}</div>
                 ) : (
                   "Image URL"
                 )}

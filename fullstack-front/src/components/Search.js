@@ -4,7 +4,7 @@ import axios from "axios";
 import Card from "./Card";
 
 export default function Search() {
-  //get param
+  //get params
   const { carType } = useParams();
   const { price } = useParams();
 
