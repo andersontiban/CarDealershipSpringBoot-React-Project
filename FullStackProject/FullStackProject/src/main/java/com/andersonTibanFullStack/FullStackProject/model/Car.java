@@ -5,9 +5,9 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-@Entity//creates car table
+@Entity//maps class to sql table
 public class Car {
-    //fields in car table
+    //fields/columns in car table
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)//auto generates the car id
     private Long id;
