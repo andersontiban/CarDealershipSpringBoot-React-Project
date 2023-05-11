@@ -11,7 +11,6 @@ export default function Card({
   onClick,
 }) {
   function handleClick() {
-    //added
     onClick();
   }
 
