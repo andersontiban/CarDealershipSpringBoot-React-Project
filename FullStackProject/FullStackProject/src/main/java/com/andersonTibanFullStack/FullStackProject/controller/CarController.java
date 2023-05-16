@@ -3,6 +3,7 @@ package com.andersonTibanFullStack.FullStackProject.controller;
 import com.andersonTibanFullStack.FullStackProject.model.Car;
 import com.andersonTibanFullStack.FullStackProject.service.CarService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -41,6 +42,7 @@ public class CarController {
     }
 
     @PostMapping("/car")//add new car
+    @ResponseStatus(HttpStatus.OK)
     public Car addCar(@RequestBody Car newCar){
         return carService.newCar(newCar);
     }
