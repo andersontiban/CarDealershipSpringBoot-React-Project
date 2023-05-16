@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultMatcher;
@@ -19,6 +20,8 @@ import org.testcontainers.shaded.org.hamcrest.Matchers;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 @WebMvcTest(CarController.class)
@@ -90,5 +93,20 @@ public class CarControllerTest {
                 .andExpect(MockMvcResultMatchers.jsonPath("$[0].imageUrl").value("www.com"))
                 .andExpect(MockMvcResultMatchers.jsonPath("$[0].carType").value("suv"))
                 .andExpect(MockMvcResultMatchers.jsonPath("$[0].carPrice").value(12000));
+    }
+
+    @Test
+    void shouldCreateNewCar() throws Exception {
+
+        this.mockMvc
+                .perform(MockMvcRequestBuilders
+                        .post("/dealership/car")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("{\"carName\" : \"testCar\", \"imageUrl\" : \"www.test.com\" , \"carType\" : \"sport\", \"carPrice\" : \"220\"}")
+                )
+                .andExpect(MockMvcResultMatchers.status().isCreated());
+
+        verify(carService).newCar(any(Car.class));
+
     }
 }
